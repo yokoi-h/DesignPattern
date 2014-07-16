@@ -2,6 +2,7 @@ __author__ = 'yokoi-h'
 
 from abc import ABCMeta, abstractmethod
 
+
 class Entry(object):
     __metaclass__ = ABCMeta
 
@@ -25,6 +26,7 @@ class Entry(object):
 
     def __str__(self):
         return '%s (%d)' % (self.getName(),self.getSize())
+
 
 class FileTreatmentException(BaseException):
 
