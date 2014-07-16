@@ -1,0 +1,23 @@
+__author__ = 'yokoi-h'
+
+from Strategy import Strategy
+from Hand import Hand
+import random
+
+class WinningStrategy(Strategy):
+
+    def __init__(self, seed):
+        self.random = random
+        self.random.seed(seed)
+        self.won = False
+        self.prevHand = None
+
+    def nextHand(self):
+        if not self.won:
+            self.prevHand = Hand.getHand(self.random.randint(0, 2))
+
+        return self.prevHand
+
+    def study(self, win):
+        self.won = win
+
